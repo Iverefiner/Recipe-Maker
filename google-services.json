@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "195317649281",
+    "firebase_url": "https://recipe-maker-521b9.firebaseio.com",
+    "project_id": "recipe-maker-521b9",
+    "storage_bucket": "recipe-maker-521b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195317649281:android:1cdc7bf32d58ba28846280",
+        "android_client_info": {
+          "package_name": "JL.Iverefiner.RecipeMaker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195317649281-71vmnl8l6j61hf2fdhhi29lln1k1m0v0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACLAIZopYIVzwJeP-lrN-sC5Z8c_ws_Zo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195317649281-71vmnl8l6j61hf2fdhhi29lln1k1m0v0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "195317649281-av3voi2dhvug3nic01321eli7pljmjq1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "JL.Iverefiner.RecipeMaker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
