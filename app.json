@@ -9,7 +9,13 @@
 		"splash": {
 			"image": "./assets/splash.png",
 			"resizeMode": "contain",
-			"backgroundColor": "#ffffff"
+			"backgroundColor": "#000000",
+			"ldpi": "./assets/splash.png",
+			"mdpi": "./assets/splash.png",
+			"hdpi": "./assets/splash.png",
+			"xhdpi": "./assets/splash.png",
+			"xxhdpi": "./assets/splash.png",
+			"xxxhdpi": "./assets/splash.png"
 		},
 		"updates": {
 			"fallbackToCacheTimeout": 0
