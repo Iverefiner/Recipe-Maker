@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import SingleRecipe from './SingleRecipe';
-
-
+import firebase from '../firebase';
+import axios from 'axios';
 
 const RecipeList = ({}) => {
-	const [ recipes, setRecipes ] = useState(fakeData);
+	const [ recipes, setRecipes ] = useState({});
+
+	useEffect(() => {
+		const fetchRecipes = async () => {
+			const db = firebase.firestore();
+			const data = await db.collection('recipes').get();
+			setRecipes(data.docs.map((doc) => doc.data()));
+		};
+		fetchRecipes();
+		console.log(recipes);
+	}, []);
 
 	return (
 		<View style={styles.screen}>
-			<View>
-				<FlatList
-					keyExtractor={(item, index) => index.toString}
-					data={recipes}
-					renderItem={(item) => <SingleRecipe recipe={item} />}
-				/>
-			</View>
+			<Text>Loading...</Text>
 		</View>
 	);
 };
@@ -24,7 +28,8 @@ const styles = StyleSheet.create({
 	screen: {
 		flex: 1,
 		padding: 10,
-		alignItems: 'center'
+		alignItems: 'center',
+		backgroundColor: '#d61c7f'
 	}
 });
 

@@ -14,24 +14,24 @@ const RecipeInput = ({ onAddRecipe, visible, onCancel }) => {
 	};
 
 	return (
-		<Modal visible={visible} animationType="slide">
-			<View style={styles.inputContainer}>
-				<TextInput
-					placeholder="New Recipe"
-					style={styles.input}
-					onChangeText={recipeInputHandler}
-					value={enteredRecipe}
-				/>
-				<View style={styles.buttonContainer}>
-					<View style={styles.button}>
-						<Button title="Cancel" color="red" onPress={onCancel} />
-					</View>
-					<View style={styles.button}>
-						<Button title="Add" onPress={addRecipeHandler} />
+			<Modal visible={visible} animationType="slide">
+				<View style={styles.inputContainer}>
+					<TextInput
+						placeholder="Recipe Name"
+						style={styles.input}
+						onChangeText={recipeInputHandler}
+						value={enteredRecipe}
+					/>
+					<View style={styles.buttonContainer}>
+						<View style={styles.button}>
+							<Button title="Cancel" color="red" onPress={onCancel} />
+						</View>
+						<View style={styles.button}>
+							<Button title="Add" onPress={addRecipeHandler} />
+						</View>
 					</View>
 				</View>
-			</View>
-		</Modal>
+			</Modal>
 	);
 };
 
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
 	},
 	button: {
 		width: '40%'
-	}
+	},
 });
 
 export default RecipeInput;

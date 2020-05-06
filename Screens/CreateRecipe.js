@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Button, FlatList } from 'react-native';
 import RecipeItem from '../components/RecipeItem';
 import RecipeInput from '../components/RecipeInput';
+// import RecipeList from './RecipeList';
+import SingleRecipe from './SingleRecipe';
 
-export default function HomeScreen() {
+export default function CreateRecipe({ navigation }) {
 	const [ recipes, setRecipes ] = useState([]);
 	const [ isAddMode, setIsAddMode ] = useState(false);
 
@@ -12,7 +14,7 @@ export default function HomeScreen() {
 			setRecipes((currentRecipes) => [ ...currentRecipes, { id: Math.random().toString(), value: recipeTitle } ]);
 			setIsAddMode(false);
 		} else {
-			alert('Enter a Recipe');
+			alert('Enter a name for your recipe!');
 		}
 	};
 
@@ -35,6 +37,10 @@ export default function HomeScreen() {
 					onAddRecipe={addRecipeHandler}
 					onCancel={cancelRecipeAdditionHandler}
 				/>
+				<View>
+					<Button title="Go to RecipeList" onPress={() => navigation.navigate('RecipeList')} />
+				</View>
+
 				<FlatList
 					keyExtractor={(item, index) => item.id}
 					data={recipes}
@@ -47,17 +53,15 @@ export default function HomeScreen() {
 					)}
 				/>
 			</View>
-			<View>
-				<Button title="Go To RecipeList" />
-			</View>
 		</View>
 	);
 }
 
 const styles = StyleSheet.create({
 	screen: {
-		// padding: 50,
-		flex: 1,
-		backgroundColor: '#d61c7f'
+		padding: 50,
+		backgroundColor: '#d61c7f',
+		padding: 10,
+		alignItems: 'center'
 	}
 });
